@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\MessagesController as MessagesController;
 use \App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 use \App\Http\Controllers\Admin\AdminProductController as AdminProductController;
 use App\Http\Controllers\Admin\AdminUserController as AdminUserController;
+use App\Http\Middleware\CheckAdmin;
 
 // // 1-Write a message with route
 
@@ -51,7 +52,7 @@ Route::post('admin/adminlogin', [AdminHomeController::class, 'adminlogin'])->nam
 // *****************************ADMIN ROUTES *******************************
 // *****************************ADMIN ROUTES *******************************
 // *****************************ADMIN ROUTES *******************************
-Route::middleware('auth')->prefix('admin')->name('admin.')->group(function(){
+Route::middleware(CheckAdmin::class.':admin')->prefix('admin')->name('admin.')->group(function(){
     Route::get('/', [AdminHomeController::class, 'index'])->name('index');
     
 

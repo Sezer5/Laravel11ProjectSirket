@@ -35,3 +35,9 @@
         {!! \Session::get('comment') !!}
     </div>
 @endif
+@if (\Session::has('permission'))
+    <div class="alert alert-danger alert-block">
+        <button type="button" class="close" data-dismiss="alert">X</button>
+        {!! \Session::get('permission') !!}
+    </div>
+@endif
