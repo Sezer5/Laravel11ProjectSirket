@@ -1,16 +1,18 @@
 <?php
 
+use App\Http\Middleware\CheckUser;
+use App\Http\Middleware\CheckAdmin;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\Admin\CommentController;
 use \App\Http\Controllers\HomeController as HomeController;
 use App\Http\Controllers\Admin\ImageController as ImageController;
 use \App\Http\Controllers\Admin\FaqController as AdminFaqController;
 use \App\Http\Controllers\Admin\HomeController as AdminHomeController;
 use App\Http\Controllers\Admin\MessagesController as MessagesController;
+use App\Http\Controllers\Admin\AdminUserController as AdminUserController;
 use \App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 use \App\Http\Controllers\Admin\AdminProductController as AdminProductController;
-use App\Http\Controllers\Admin\AdminUserController as AdminUserController;
-use App\Http\Middleware\CheckAdmin;
 
 // // 1-Write a message with route
 
@@ -47,6 +49,24 @@ Route::get('/logout', [HomeController::class, 'logout'])->name('logout');
 Route::get('/admin/loginadmin', [AdminHomeController::class, 'loginadmin'])->name('admin.loginadmin');
 Route::post('admin/adminlogin', [AdminHomeController::class, 'adminlogin'])->name('admin.adminlogin');
 
+//*******************************AUTH ROUTES ******************************/
+//*******************************AUTH ROUTES ******************************/
+//*******************************AUTH ROUTES ******************************/
+//*******************************AUTH ROUTES ******************************/
+//*******************************AUTH ROUTES ******************************/
+
+Route::middleware('auth')->group(function(){
+
+// *****************************USER ROUTES *******************************
+// *****************************USER ROUTES *******************************
+// *****************************USER ROUTES *******************************
+// *****************************USER ROUTES *******************************
+// *****************************USER ROUTES *******************************
+
+Route::middleware(CheckUser::class.':user')->prefix('user')->name('user.')->group(function(){
+    Route::get('/', [UserController::class, 'index'])->name('index');
+    Route::post('/userprofileuptade', [UserController::class, 'userprofileuptade'])->name('userprofileuptade');
+});
 // *****************************ADMIN ROUTES *******************************
 // *****************************ADMIN ROUTES *******************************
 // *****************************ADMIN ROUTES *******************************
@@ -158,6 +178,7 @@ Route::middleware(CheckAdmin::class.':admin')->prefix('admin')->name('admin.')->
         Route::get('/show/{id}','show')->name('show');
     });
 
+});
 });
 // // 4- Route->Controller->View
 

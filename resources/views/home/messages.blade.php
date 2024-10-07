@@ -23,6 +23,12 @@
         {!! \Session::get('faq_edited') !!}
     </div>
 @endif
+@if (\Session::has('successprofile'))
+    <div class="alert alert-success alert-block">
+        <button type="button" class="close" data-dismiss="alert">X</button>
+        {!! \Session::get('successprofile') !!}
+    </div>
+@endif
 @if (\Session::has('faq_deleted'))
     <div class="alert alert-danger alert-block">
         <button type="button" class="close" data-dismiss="alert">X</button>

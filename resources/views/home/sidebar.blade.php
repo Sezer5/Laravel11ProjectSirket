@@ -32,7 +32,7 @@
                 
             </div><!--/category-products-->
         
-            <div class="brands_products"><!--brands_products-->
+            {{-- <div class="brands_products"><!--brands_products-->
                 <h2>Brands</h2>
                 <div class="brands-name">
                     <ul class="nav nav-pills nav-stacked">
@@ -57,7 +57,7 @@
             
             <div class="shipping text-center"><!--shipping-->
                 <img src="images/home/shipping.jpg" alt="" />
-            </div><!--/shipping-->
-        
+            </div><!--/shipping--> --}}
+            @include('home.user.usermenu')
         </div>
     </div>
