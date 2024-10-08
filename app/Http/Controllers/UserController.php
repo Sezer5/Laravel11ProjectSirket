@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use App\Models\Faq;
 use App\Models\User;
 use App\Models\Product;
@@ -79,5 +80,29 @@ class UserController extends Controller
         $data->password = bcrypt($request->password);
         $data->save();
         return redirect()->back()->with('successprofile', 'User Updated');
+    }
+
+    public function reviews()
+    {
+        //
+        
+        $settings=Settings::first();
+        $comments=Comment::where('user_id','=',Auth::id())->get();
+        return view('home.user.reviews',[
+            'settings'=>$settings,
+            'comments'=>$comments,
+        ]);
+    }
+
+    public function showreviews(string $id)
+    {
+        //
+        $data=Comment::find($id);
+        $data->save();
+        return view('home.user.showreviews',[
+            'data'=>$data,
+            
+            
+        ]);
     }
 }

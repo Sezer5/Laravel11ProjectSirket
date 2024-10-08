@@ -66,6 +66,8 @@ Route::middleware('auth')->group(function(){
 Route::middleware(CheckUser::class.':user')->prefix('user')->name('user.')->group(function(){
     Route::get('/', [UserController::class, 'index'])->name('index');
     Route::post('/userprofileuptade', [UserController::class, 'userprofileuptade'])->name('userprofileuptade');
+    Route::get('/reviews', [UserController::class, 'reviews'])->name('reviews');
+    Route::get('/showreviews/{id}', [UserController::class, 'showreviews'])->name('showreviews');
 });
 // *****************************ADMIN ROUTES *******************************
 // *****************************ADMIN ROUTES *******************************
