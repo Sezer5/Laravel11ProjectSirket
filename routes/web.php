@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\MessagesController as MessagesController;
 use App\Http\Controllers\Admin\AdminUserController as AdminUserController;
 use \App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 use \App\Http\Controllers\Admin\AdminProductController as AdminProductController;
+use App\Http\Controllers\ShopCartController as ShopCartController;
 
 // // 1-Write a message with route
 
@@ -68,6 +69,16 @@ Route::middleware(CheckUser::class.':user')->prefix('user')->name('user.')->grou
     Route::post('/userprofileuptade', [UserController::class, 'userprofileuptade'])->name('userprofileuptade');
     Route::get('/reviews', [UserController::class, 'reviews'])->name('reviews');
     Route::get('/showreviews/{id}', [UserController::class, 'showreviews'])->name('showreviews');
+
+    Route::prefix('/shopcart')->name('shopcart.')->controller(ShopCartController::class)->group(function(){
+        Route::get('/','index')->name('index');
+        Route::get('/create', 'create')->name('create');
+        Route::post('/store', 'store')->name('store');
+        Route::get('/edit/{id}','edit')->name('edit');
+        Route::post('/update/{id}', 'update')->name('update');
+        Route::get('/destroy/{id}','destroy')->name('destroy');
+        Route::get('/show/{id}','show')->name('show');
+    });
 });
 // *****************************ADMIN ROUTES *******************************
 // *****************************ADMIN ROUTES *******************************

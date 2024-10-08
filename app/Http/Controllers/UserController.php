@@ -7,6 +7,7 @@ use App\Models\Faq;
 use App\Models\User;
 use App\Models\Product;
 use App\Models\Settings;
+use App\Models\ShopCart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -39,6 +40,7 @@ class UserController extends Controller
     public function store(Request $request)
     {
         //
+        
     }
 
     /**

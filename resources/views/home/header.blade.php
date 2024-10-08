@@ -62,14 +62,18 @@
                             @auth
                             <div    class = "btn-group">
                             <button type  = "button" class = "btn btn-default dropdown-toggle usa" data-toggle = "dropdown">
-                                    <h4>{{Auth::user()->name}}</h4>    
+                                    <h4>{{Auth::user()->name}} 
+                                        @php
+                                                $num = \App\Http\Controllers\ShopCartController::countcart();
+                                        @endphp
+                                    </h4>    
                                         <span class = "caret"></span>
                                     </button>
                                     <ul    class = "dropdown-menu">
                                     <li><a href  = "{{route('logout')}}"><i class = "fa fa-user"></i> Logout</a></li>
                                     <li><a href  = "#"><i class                   = "fa fa-star"></i> Wishlist</a></li>
                                     <li><a href  = "checkout.html"><i class       = "fa fa-crosshairs"></i> Checkout</a></li>
-                                    <li><a href  = "cart.html"><i class           = "fa fa-shopping-cart"></i> Cart</a></li>
+                                    <li><a href  = "cart.html"><i class = "fa fa-shopping-cart"> @php echo $num; @endphp</i> Cart </a></li>
                                     </ul>
                             </div>                           
                             @endauth

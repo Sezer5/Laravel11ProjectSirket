@@ -39,16 +39,21 @@
             <img src   = "images/product-details/new.jpg" class = "newarrival" alt = "" />
                     <h2>{{ $product->title }}</h2>
                     <p>{{ $product->category->title }}</p>
-                    <img src = "images/product-details/rating.png" alt = "" />
-                    <span>
-                        <span>US ${{ $product->price }}</span>
-                        <label>Quantity: </label>
-                        <input  type  = "text" value   = "{{ $product->quantity }}" />
-                        <button type  = "button" class = "btn btn-fefault cart">
-                        <i      class = "fa fa-shopping-cart"></i>
-                            Add to cart
-                        </button>
-                    </span>
+                    <img  src    = "images/product-details/rating.png" alt = "" />
+                    @include('home.messages')
+                    <form action = "{{route('user.shopcart.store')}}" method = "POST">
+                        @csrf
+                        <span>
+                            <span>US ${{ $product->price }}</span>
+                            <label>Quantity: </label>
+                            <input  type  = "number" name  = "quantity" value="1" min="1" max="{{ $product->quantity }}"/>
+                            <input  type  = "text" name  = "product_id" value="{{ $product->id }}" hidden/>
+                            <button type  = "submit" class = "btn btn-fefault cart">
+                            <i      class = "fa fa-shopping-cart"></i>
+                                Add to cart
+                            </button>
+                        </span>
+                    </form>
                                <p><b>Keywords   : </b> {{ $product->keywords }}</p>
                                <p><b>Description: </b> {{ $product->description }}</p>
                     <p><b>Rate Avr.             : </b>
