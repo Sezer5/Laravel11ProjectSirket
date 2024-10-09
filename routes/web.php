@@ -77,6 +77,8 @@ Route::middleware(CheckUser::class.':user')->prefix('user')->name('user.')->grou
         Route::get('/edit/{id}','edit')->name('edit');
         Route::post('/update/{id}', 'update')->name('update');
         Route::get('/destroy/{id}','destroy')->name('destroy');
+        Route::get('/quantityup/{id}','quantityup')->name('quantityup');
+        Route::get('/quantitydown/{id}','quantitydown')->name('quantitydown');
         Route::get('/show/{id}','show')->name('show');
     });
 });

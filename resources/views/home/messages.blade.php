@@ -35,6 +35,12 @@
         {!! \Session::get('addproduct') !!}
     </div>
 @endif
+@if (\Session::has('delproduct'))
+    <div class="alert alert-danger alert-block">
+        <button type="button" class="close" data-dismiss="alert">X</button>
+        {!! \Session::get('delproduct') !!}
+    </div>
+@endif
 @if (\Session::has('faq_deleted'))
     <div class="alert alert-danger alert-block">
         <button type="button" class="close" data-dismiss="alert">X</button>
