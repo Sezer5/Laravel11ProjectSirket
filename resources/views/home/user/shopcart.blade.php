@@ -87,6 +87,27 @@
                                         
                                     </td>
                                 </tr>
+                                <tr>
+                                    <td class="cart_product">
+                                        <h2 class="title"></h2>
+                                    </td>
+                                    <td class="cart_description">
+                                        
+                                    </td>
+                                    <td class="cart_price">
+                                       
+                                    </td>
+                                    <td class="cart_quantity">
+                                        
+                                    </td>
+                                   
+                                    <td class="cart_total">
+                                            
+                                    </td>
+                                    <td class="cart_delete">
+                                        <button type="submit" class="btn btn-default get"><i class="fa fa-shopping-cart"></i> Place Order</button>
+                                    </td>
+                                </tr>
                                 
                             </tbody>
                         </table>
