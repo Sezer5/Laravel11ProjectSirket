@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\MessagesController as MessagesController;
 use App\Http\Controllers\Admin\AdminUserController as AdminUserController;
 use \App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 use \App\Http\Controllers\Admin\AdminProductController as AdminProductController;
+use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\ShopCartController as ShopCartController;
 
 // // 1-Write a message with route
@@ -109,6 +110,21 @@ Route::middleware(CheckAdmin::class.':admin')->prefix('admin')->name('admin.')->
     // *****************************ADMIN CATEGORY ROUTES *********************
     Route::prefix('/category')->name('category.')->controller(AdminCategoryController::class)->group(function(){
         Route::get('/','index')->name('index');
+        Route::get('/create', 'create')->name('create');
+        Route::post('/store', 'store')->name('store');
+        Route::get('/edit/{id}','edit')->name('edit');
+        Route::post('/update/{id}', 'update')->name('update');
+        Route::get('/destroy/{id}','destroy')->name('destroy');
+        Route::get('/show/{id}','show')->name('show');
+    });
+
+    // *****************************ADMIN ORDER ROUTES *********************
+    // *****************************ADMIN ORDER ROUTES *********************
+    // *****************************ADMIN ORDER ROUTES *********************
+    // *****************************ADMIN ORDER ROUTES *********************
+    // *****************************ADMIN ORDER ROUTES *********************
+    Route::prefix('/order')->name('order.')->controller(OrderController::class)->group(function(){
+        Route::get('/{slug}','index')->name('index');
         Route::get('/create', 'create')->name('create');
         Route::post('/store', 'store')->name('store');
         Route::get('/edit/{id}','edit')->name('edit');

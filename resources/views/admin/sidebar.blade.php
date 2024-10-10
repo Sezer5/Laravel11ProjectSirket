@@ -135,6 +135,42 @@
                         
                     </ul>
                 </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-list"></i>
+                        <p>
+                            Orders
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('admin.order.index',['slug'=>'New']) }}" class="nav-link">
+                                <i class="fas fa-list"></i>
+                                <p>New</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('admin.order.index',['slug'=>'Accepted']) }}" class="nav-link">
+                                <i class="fas fa-list"></i>
+                                <p>Accepted</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('admin.order.index',['slug'=>'Shipping']) }}" class="nav-link">
+                                <i class="fas fa-list"></i>
+                                <p>Shipping</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('admin.order.index',['slug'=>'Completed']) }}" class="nav-link">
+                                <i class="fas fa-list"></i>
+                                <p>Completed</p>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </li>
                   <li class="nav-header">EXAMPLES</li>
                   
               </ul>
