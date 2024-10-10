@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('email',50);
             $table->string('address',200);
             $table->string('phone',200);
-            $table->float('total',200);
+            $table->float('total');
             $table->string('note',150)->nullable();
             $table->string('IP',20);
             $table->string('status',30)->default('New');

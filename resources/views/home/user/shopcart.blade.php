@@ -104,9 +104,13 @@
                                     <td class="cart_total">
                                             
                                     </td>
-                                    <td class="cart_delete">
-                                        <button type="submit" class="btn btn-default get"><i class="fa fa-shopping-cart"></i> Place Order</button>
-                                    </td>
+                                    <form action="{{route('user.shopcart.order')}}" method="POST">
+                                        @csrf
+                                        <td class="cart_delete">
+                                            <input type="text" name="total" value="{{ $grandtotal }}" hidden>
+                                            <button type="submit" class="btn btn-default get"><i class="fa fa-shopping-cart"></i> Place Order</button>
+                                        </td>
+                                    </form>
                                 </tr>
                                 
                             </tbody>

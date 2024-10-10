@@ -4,7 +4,7 @@
         <div class="brands-name">
             <ul class="nav nav-pills nav-stacked">
                 <li><a href="{{route('user.index')}}"> <i class = "fa fa-user"></i> Profile</a></li>
-                <li><a href="#"> <i class = "fa fa-gift"></i> Orders</a></li>
+                <li><a href="{{route('user.shopcart.user_orders')}}"> <i class = "fa fa-gift"></i> Orders</a></li>
                 <li><a href="{{route('user.reviews')}}"> <i class = "fa fa-file"></i> Reviews</a></li>
                 <li><a href="#"> <i class = "fa fa-eye"></i> Checkout</a></li>
                 <li><a href="#"> <i class = "fa fa-lock"></i> Login</a></li>

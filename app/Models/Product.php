@@ -20,4 +20,7 @@ class Product extends Model
     public function comment(){
         return $this->hasMany(Comment::class);
     }
+    public function orderproduct(){
+        return $this->hasMany(OrderProduct::class);
+    }
 }

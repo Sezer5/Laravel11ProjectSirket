@@ -80,6 +80,10 @@ Route::middleware(CheckUser::class.':user')->prefix('user')->name('user.')->grou
         Route::get('/quantityup/{id}','quantityup')->name('quantityup');
         Route::get('/quantitydown/{id}','quantitydown')->name('quantitydown');
         Route::get('/show/{id}','show')->name('show');
+        Route::post('/order', 'order')->name('order');
+        Route::post('/storeorder', 'storeorder')->name('storeorder');
+        Route::get('/user_orders', 'user_orders')->name('user_orders');
+        Route::get('/user_order_details/{id}','user_order_details')->name('user_order_details');
     });
 });
 // *****************************ADMIN ROUTES *******************************
